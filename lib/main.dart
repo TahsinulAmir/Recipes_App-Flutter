@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/category_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,12 +23,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Recipes"),
-      ),
-      body: Center(
-        child: Text("Recipes"),
-      ),
-    );
+        appBar: AppBar(
+          title: Text("Recipes"),
+        ),
+        body: CategoryScreen());
   }
 }
