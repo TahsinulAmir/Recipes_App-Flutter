@@ -5,6 +5,7 @@ class Food {
   final List<String> ingredients;
   final String imageUrl;
   final int duration;
+  bool isFavorite;
 
   Food(
       {required this.id,
@@ -12,5 +13,6 @@ class Food {
       required this.category,
       required this.ingredients,
       required this.duration,
-      required this.imageUrl});
+      required this.imageUrl,
+      this.isFavorite = false});
 }

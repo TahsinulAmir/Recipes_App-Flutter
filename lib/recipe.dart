@@ -3,14 +3,13 @@ import 'package:recipes_app/dummy_data.dart';
 
 import 'models/food.dart';
 
-class Recipe extends StatelessWidget {
-  // final String idCategory;
-  // final String title;
-  const Recipe({
-    super.key,
-    // required this.idCategory,
-    // required this.title,
-  });
+class Recipe extends StatefulWidget {
+  @override
+  State<Recipe> createState() => _RecipeState();
+}
+
+class _RecipeState extends State<Recipe> {
+  bool isFav = false;
 
   @override
   Widget build(BuildContext context) {
