@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Recipe extends StatelessWidget {
-  const Recipe({super.key});
+  final String idCategory;
+  final String title;
+  const Recipe({super.key, required this.idCategory, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,7 @@ class Recipe extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Ayam",
+          title,
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.transparent,
