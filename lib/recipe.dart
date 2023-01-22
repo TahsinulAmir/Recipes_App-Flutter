@@ -28,16 +28,80 @@ class Recipe extends StatelessWidget {
           argsRecipe['title'],
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.grey[100],
         elevation: 0,
       ),
       body: Center(
-        child: ListView.builder(
-          itemCount: filteredFood.length,
-          itemBuilder: (context, index) {
-            final food = filteredFood[index].title;
-            return Text(food);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ListView.builder(
+            itemCount: filteredFood.length,
+            itemBuilder: (context, index) {
+              final food = filteredFood[index];
+              return Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)),
+                margin: EdgeInsets.only(bottom: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(food.imageUrl),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 20, right: 20, top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            food.title,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.timer_outlined,
+                                    color: Colors.red,
+                                  ),
+                                  Text(
+                                    ' ${food.duration} mins',
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_border_outlined,
+                                  color: Colors.redAccent,
+                                  size: 30,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
