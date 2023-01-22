@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/category_item.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -13,9 +14,7 @@ class CategoryScreen extends StatelessWidget {
           crossAxisSpacing: 15,
           childAspectRatio: 10 / 12),
       itemBuilder: (context, index) {
-        return Container(
-          color: Colors.amber,
-        );
+        return CategoryItem();
       },
     );
   }
