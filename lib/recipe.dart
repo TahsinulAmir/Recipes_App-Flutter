@@ -40,7 +40,10 @@ class Recipe extends StatelessWidget {
               final food = filteredFood[index];
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/detail_food');
+                  Navigator.pushNamed(context, '/detail_food', arguments: {
+                    'title': food.title,
+                    'ingredients': food.ingredients,
+                  });
                 },
                 child: Container(
                   decoration: BoxDecoration(

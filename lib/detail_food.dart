@@ -5,9 +5,11 @@ class DetailFood extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> argsFood =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(
       body: Center(
-        child: Text("Food"),
+        child: Text(argsFood['title']),
       ),
     );
   }
