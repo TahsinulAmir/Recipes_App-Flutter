@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/category_screen.dart';
+import 'package:recipes_app/recipe.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      routes: {
+        '/': (context) => HomePage(),
+        '/recipes': (context) => Recipe(),
+      },
+      initialRoute: '/',
     );
   }
 }
