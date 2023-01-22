@@ -91,9 +91,16 @@ class _RecipeState extends State<Recipe> {
                                   ],
                                 ),
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      isFav = !isFav;
+                                      food.isFavorite = !isFav;
+                                    });
+                                  },
                                   icon: Icon(
-                                    Icons.favorite_border_outlined,
+                                    food.isFavorite
+                                        ? Icons.favorite
+                                        : Icons.favorite_border_outlined,
                                     color: Colors.redAccent,
                                     size: 30,
                                   ),
