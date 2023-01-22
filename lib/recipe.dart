@@ -11,11 +11,13 @@ class Recipe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> argsRecipe =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "title",
+          argsRecipe['title'],
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.transparent,

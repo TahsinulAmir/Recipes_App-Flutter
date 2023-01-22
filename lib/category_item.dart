@@ -13,7 +13,14 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/recipes');
+        Navigator.pushNamed(
+          context,
+          '/recipes',
+          arguments: {
+            'id': id,
+            'title': title,
+          },
+        );
       },
       child: Container(
         decoration: BoxDecoration(
