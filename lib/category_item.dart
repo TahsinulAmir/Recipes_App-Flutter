@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/recipe.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -10,40 +11,50 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Colors.grey,
-        boxShadow: [
-          BoxShadow(
-              color: Color.fromARGB(64, 0, 0, 0),
-              blurRadius: 8,
-              offset: Offset(0, 5))
-        ],
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage(images),
-          alignment: Alignment.center,
-        ),
-      ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Recipe(),
+          ),
+        );
+      },
       child: Container(
-        alignment: Alignment.bottomLeft,
-        padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            colors: [
-              Colors.black,
-              Colors.transparent,
-            ],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            stops: [0.1, 0.6],
+          color: Colors.grey,
+          boxShadow: [
+            BoxShadow(
+                color: Color.fromARGB(64, 0, 0, 0),
+                blurRadius: 8,
+                offset: Offset(0, 5))
+          ],
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(images),
+            alignment: Alignment.center,
           ),
         ),
-        child: Text(
-          title,
-          style: TextStyle(color: Colors.white),
+        child: Container(
+          alignment: Alignment.bottomLeft,
+          padding: EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Colors.transparent,
+              ],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              stops: [0.1, 0.6],
+            ),
+          ),
+          child: Text(
+            title,
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );
