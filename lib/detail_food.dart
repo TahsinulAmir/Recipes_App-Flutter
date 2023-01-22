@@ -34,7 +34,15 @@ class DetailFood extends StatelessWidget {
                 itemCount: ingredients.length,
                 itemBuilder: (context, index) {
                   final ing = ingredients[index];
-                  return Text(ing);
+                  return Container(
+                    padding: EdgeInsets.all(20),
+                    margin: EdgeInsets.only(bottom: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(ing),
+                  );
                 },
               ),
             )
